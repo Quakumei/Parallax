@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Parallax</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="parallax-frame">
+        <img src="res/bg.png" alt="bg.png" class="parallax-background">
+        <img src="res/fg.png" alt="fg.png" class="parallax-foreground parallax mirror" value_x="-3" value_y="-3" id="soft-light">
+        <img src="res/fg_mirrored.png" alt="fg_mirorred.png" class="parallax-foreground parallax" value_x="3" value_y="3">
+        <!-- <img src="res/fg.png" alt="fg.png" class="parallax-foreground parallax" value_x="2.5" value_y="1.25" id="soft-light"> -->
+    </main>
+    <footer class="attribution">
+        Original art by <a href="https://vk.com/smr_www">samara03</a><br>
+        Parallax by <a href="https://github.com/Quakumei">Ilya "Quakumei" Tampio</a>
+    </footer>
+</body>
+
+<script type="text/javascript">
+    imageForeground = document.getElementsByClassName("parallax-foreground")[0];
+    document.addEventListener("mousemove", parallax);
+    function parallax(event) {
+      this.querySelectorAll(".parallax").forEach((shift) => {
+        const position_x = shift.getAttribute("value_x");
+        const position_y = shift.getAttribute("value_y");
+        const x = (window.innerWidth - 2 * event.pageX ) / 70 * position_x;
+        const y = (window.innerHeight - 2 * event.pageY ) / 70 * position_y;
+
+        shift.style.transform = `translateX(calc(2 * ${x}px)) translateY(calc(2 * ${y}px))`;
+      });
+    }
+  </script>
+
+</html>

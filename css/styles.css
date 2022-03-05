@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Typography */
+    --family: 'Montserrat', sans-serif;
+    --weight-normal: 400;
+    --weight-bold: 700;
+    --fs-base: 1rem;
+
+    /* Colors */
+    --black-700: #1D1C21;
+    --blue-500: #207ADB;
+    --white-200: #E0EBFD;
+    --red-350: #B18084;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+
+    padding-top: 3%;
+
+    font-size: var(--fs-base);
+    font-family: var(--family);
+    font-weight: var(--weight-normal);
+
+    background-color: var(--black-700);
+    color: var(--white-200);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    scroll-behavior: smooth;
+}
+
+main {
+    height: 80%;
+}
+
+.attribution {
+    margin:5rem;
+    z-index: 3;
+
+    padding: 0.5rem 1rem;
+    background-color: var(--black-700);
+    border-radius: 2rem;
+}
+
+.attribution a {
+    all: unset;
+    cursor: pointer;
+    color: var(--blue-500);
+
+    transition: color 0.25s ease;
+}
+
+.attribution a:hover {
+    color: var(--white-200);
+    cursor: pointer;
+}
+
+.parallax-frame {
+    width: 80%;
+    max-width: 700px;
+    aspect-ratio: 1280/1581;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    box-shadow:
+    0 0 60px 30px var(--white-200),  /* inner white */
+    0 0 100px 60px var(--red-350), /* middle magenta */
+    0 0 140px 90px var(--blue-500); /* outer cyan */
+}
+
+.parallax-frame img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.5s ease;
+}
+
+.parallax-background {
+    z-index: 1;
+    filter:blur(3px);
+}
+
+.parallax-foreground {
+    z-index: 2;
+}
+
+#soft-light {
+    mix-blend-mode: soft-light;
+}
+
+
+
