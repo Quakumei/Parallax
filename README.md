@@ -1,9 +1,10 @@
 # Simple parallax effect
+It moves when you move the mouse!!!
 ## Screenshot
 ![screenshot](res/screenshot.png)
 
 ## Deployment / Live URL
-- [Vercel]()
+- [Vercel live site](https://parallax-quakumei.vercel.app/)
 
 ## Stack
 - JS
